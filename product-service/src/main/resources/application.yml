@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: product-service
+  data:
+    mongodb:
+      database: productdb
+      # pour vrai base de donnees
+      host: localhost
+      port: 27017
+      #username: user
+      #password: pwd
+server:
+  port: 8091
