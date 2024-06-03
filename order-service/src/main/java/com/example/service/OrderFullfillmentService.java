@@ -11,6 +11,9 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import reactor.core.publisher.Mono;
 import reactor.core.scheduler.Schedulers;
+import reactor.util.retry.Retry;
+
+import java.time.Duration;
 
 @Service
 @RequiredArgsConstructor
@@ -34,6 +37,8 @@ public class OrderFullfillmentService {
         return productClient.getProductById(
                 rc.getPurchaseOrderRequestDto().getProductId())
                 .doOnNext(rc::setProductDto)
+                //.retry(5)essaye 5 autre fois basique
+                .retryWhen(Retry.fixedDelay(5, Duration.ofSeconds(1)))
                 .thenReturn(rc);
     }
     private Mono<RequestContext> userRequestResponse(RequestContext rc){
