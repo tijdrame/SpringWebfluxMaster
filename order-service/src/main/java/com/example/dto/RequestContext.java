@@ -5,7 +5,6 @@ import lombok.Data;
 import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor
-@Builder
 @Data
 public class RequestContext {
     private final PurchaseOrderRequestDto purchaseOrderRequestDto;

@@ -4,7 +4,7 @@ spring:
 
 product:
   service:
-    url: http:localhost:8091/product/
+    url: "http://localhost:8091/product/"
 user:
   service:
-    url: http:localhost:8092/user/
+    url: "http://localhost:8092/user/"

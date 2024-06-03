@@ -1,10 +1,8 @@
 package com.example.util;
 
-import com.example.dto.OrderStatus;
 import com.example.dto.PurchaseOrderResponseDto;
 import com.example.dto.RequestContext;
 import com.example.dto.TransactionRequestDto;
-import com.example.dto.TransactionStatus;
 import com.example.entity.PurchaseOrder;
 
 import static com.example.dto.OrderStatus.COMPLETED;
