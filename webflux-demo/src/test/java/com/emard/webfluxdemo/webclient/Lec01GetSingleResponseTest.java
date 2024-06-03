@@ -1,4 +1,4 @@
-package com.emard.webfluxdemo;
+package com.emard.webfluxdemo.webclient;
 
 import com.emard.webfluxdemo.dto.Response;
 import org.junit.jupiter.api.Test;

@@ -1,4 +1,4 @@
-package com.emard.webfluxdemo;
+package com.emard.webfluxdemo.webclient;
 
 import org.junit.jupiter.api.Test;
 import reactor.core.publisher.Flux;

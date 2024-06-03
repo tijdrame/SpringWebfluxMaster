@@ -1,21 +1,22 @@
-package com.emard.webfluxdemo;
+package com.emard.webfluxdemo.webclient;
 
 import com.emard.webfluxdemo.dto.MultiplyRequestDto;
 import com.emard.webfluxdemo.dto.Response;
 import org.junit.jupiter.api.Test;
 import reactor.test.StepVerifier;
 
-public class Lec03PostRequestTest extends BaseTest{
+public class Lec08AttributesTest extends BaseTest {
     @Test
-    void postTest(){
+    void headerTest(){
         var response= webClient.post()
                 .uri("reactive-math/multiply")
                 .bodyValue(buildRequestDto(5,2))
+                .headers(h -> h.set("someKey", "someValue"))
+                .attribute("auth", "oAuth")
                 .retrieve()
                 .bodyToMono(Response.class)
                 .doOnNext(System.out::println);
         StepVerifier.create(response)
-                //.expectNextCount(1)
                 .expectNextMatches(response1 -> response1.getOutput() == 10)
                 .verifyComplete();
     }

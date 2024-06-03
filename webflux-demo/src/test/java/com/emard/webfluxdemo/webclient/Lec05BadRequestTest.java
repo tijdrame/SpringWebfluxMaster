@@ -1,9 +1,8 @@
-package com.emard.webfluxdemo;
+package com.emard.webfluxdemo.webclient;
 
 import com.emard.webfluxdemo.dto.Response;
 import org.junit.jupiter.api.Test;
 import org.springframework.web.reactive.function.client.WebClientResponseException;
-import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 import reactor.test.StepVerifier;
 
